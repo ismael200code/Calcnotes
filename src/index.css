@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Inder&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&family=Inder&family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --default-font-family: 'Inter', sans-serif;
+  --font-table: 'Chivo', sans-serif;
+  --color-background: #0B132B;
+  --color-background-card: #1c2541;
+  --color-border-card: #3a506b;
+  --color-low: #ef476f;
+  --color-mid: #f5a261;
+  --color-good: #ffd166;
+  --color-high: #06d6a0;
+  --color-button: #00b4d8;
+  --color-text-second: #8d99ae;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-white;
+  }
+
+  .popup-overlay {
+    @apply bg-slate-900/60 backdrop-blur-sm;
+}
+}
+
+td {
+  padding: 5px;
+  border: 1px white solid;
+}
+
