@@ -16,10 +16,10 @@ function Configuration() {
   const [eleveIsOpen,setEleveIsOpen] = useState(false)
   const [uniteIsOpen,setUniteIsOpen] = useState(false)
   const [classesName,setClassesName] = useState("")
-  const [classesCoef,setClassesCoef] = useState(0)
+  const [classesCoef,setClassesCoef] = useState("")
   const [classesDifficult,setClassesDifficult] = useState("low")
   const [unitesName,setUnitesNames] = useState("")
-  const [unitesCoef,setUnitesCoef] = useState(0)
+  const [unitesCoef,setUnitesCoef] = useState("")
 
   
   if (studentStatut === "eleve") {
@@ -68,9 +68,9 @@ function Configuration() {
             <h1 className="font-bold underline-offset-4 underline text-2xl text-center mb-4">Ajouter une matière</h1>
             <form className="" onSubmit={(e)=>{
               e.preventDefault()
-              const datastudent: DataTypeEleve = {id:0, name:classesName, coef:classesCoef, difficultyMoyenne:classesDifficult as 'low' | 'middle' | 'good' | 'high'}
+              const datastudent: DataTypeEleve = {id:0, name:classesName, coef:Number(classesCoef), difficultyMoyenne:classesDifficult as 'low' | 'middle' | 'good' | 'high'}
               addClasses(datastudent)
-              setClassesCoef(0)
+              setClassesCoef("")
               setClassesName("")
               }}>
               <div className="flex flex-col gap-1 m-2">
@@ -79,7 +79,7 @@ function Configuration() {
               </div>
               <div className="flex flex-col gap-1 m-2">
                 <label className="font-semibold">Coefficient:</label>
-                <input type="number" name="coef" value={classesCoef} onChange={(e)=>{setClassesCoef(Number(e.target.value))}} className="p-2 border rounded-xl" required placeholder="ex: 5"/>
+                <input type="number" name="coef" value={classesCoef} onChange={(e)=>{setClassesCoef(e.target.value)}} className="p-2 border rounded-xl" required placeholder="ex: 5"/>
               </div>
               <div className="flex flex-col gap-1 m-2">
                 <label className="font-semibold">Niveau de difficulté:</label>
@@ -132,10 +132,10 @@ function Configuration() {
     const addUnites = ()=>{
       const newArray = {...data}
       const id = newArray.etudiant.length + 1
-      newArray.etudiant.push({id:id, name:unitesName, coef:unitesCoef, data: []})
+      newArray.etudiant.push({id:id, name:unitesName, coef:Number(unitesCoef), data: []})
       setData(newArray)
       setUnitesNames("")
-      setUnitesCoef(0)
+      setUnitesCoef("")
       setUniteIsOpen(false)
     }
 
@@ -185,7 +185,7 @@ function Configuration() {
               </div>
               <div className="flex flex-col gap-1 m-2">
                 <label className="font-semibold">Coefficient:</label>
-                <input type="number" value={unitesCoef} onChange={(e)=>{setUnitesCoef(Number(e.target.value))}} className="p-2 border rounded-xl" required placeholder="ex: 5"/>
+                <input type="number" value={unitesCoef} onChange={(e)=>{setUnitesCoef(e.target.value)}} className="p-2 border rounded-xl" required placeholder="ex: 5"/>
               </div>
               <div className="flex justify-between items-center mt-5">
                 <button className="p-3 rounded-xl bg-text-second text-black hover:scale-105 active:scale-95" type="button" onClick={handleClose}>Annuler</button>

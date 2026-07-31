@@ -16,8 +16,8 @@ export interface DataTypeEleve {
 export type DataTypeState = {
   etudiant: { id: number, name: string, coef: number, data: DataTypeEtudiant[] }[],//[string,DataTypeEtudiant [],string,number] [],
   eleve: DataTypeEleve[]
-  moyenneEleve: number
-  moyenneEtudiant: number
+  moyenneEleve: number 
+  moyenneEtudiant: number 
 }
 export interface BullettinsData {
   control: {
