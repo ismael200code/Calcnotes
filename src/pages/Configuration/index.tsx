@@ -45,7 +45,7 @@ function Configuration() {
           }} min={0} max={20} className="text-center border border-border-card rounded w-20 active:decoration-0" />
         </div>
 
-        <div className="mt-10 w-full flex flex-col lg:flex-row gap-3 flex-wrap">
+        <div className="mt-10 w-full flex items-center flex-col lg:flex-row gap-3 flex-wrap">
           {data.eleve.length ?
             data.eleve.map((element,index) => (
               <Card secondIndex="" key={element.id} id={index} coef={element.coef} classes={element.name} qualif={studentStatut} choice={["","",element.difficultyMoyenne]}/>

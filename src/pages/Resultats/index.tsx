@@ -76,7 +76,9 @@ function Resultat() {
           <div className="flex flex-col justify-center items-center mt-5">
             <p className="italic text-center">{dataBullettinEtudiant.message}</p>
             <h3 className="font-semibold mt-3">Moyenne obtennu: {moyenne}</h3>
-            <BullettinEtudiant data={dataBullettinEtudiant} />
+            <div className="">
+              <BullettinEtudiant data={dataBullettinEtudiant} />
+            </div>
           </div>
         </div>
       )

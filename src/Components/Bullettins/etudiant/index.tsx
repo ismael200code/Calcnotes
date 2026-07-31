@@ -20,11 +20,11 @@ const BullettinEtudiant = ({data: dataAlgo}) => {
   return (
     <table className="font-table">
       <thead>
-        <tr className="font-semibold lg:text-2xl md:text-2xl">
+        <tr className="font-semibold text-sm lg:text-2xl md:text-2xl">
           <td>Matière</td>
           <td>Coef</td>
-          <td>Contrôle</td>
-          <td>Examen</td>
+          <td>C.C</td>
+          <td>Exam</td>
           <td>Moyenne</td>
         </tr>
       </thead>
