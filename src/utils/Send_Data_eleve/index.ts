@@ -3,9 +3,9 @@ import type { DataTypeEleve, NotesDataEleve } from "../../types/data_type";
 
 
 const sendDataEleve = (data: DataTypeEleve[], moyenGoal: number) => {
-  const dataSend = []
+  const dataSend: {id: number,name:string, coef:number,secondCoef:number,difficultyExam: "low" | "middle" | "good" | "high",difficultyTest: "low" | "middle" | "good" | "high"} []= []
   for (let i = 0; i < data.length; i++) {
-    const newData = { id: 0, name: data[i].name, coef: data[i].coef,secondCoef:data[i].coef, difficultyExam: data[i].difficultyMoyenne, difficultyTest: 'low' }
+    const newData = { id: 0, name: data[i].name, coef: data[i].coef,secondCoef:data[i].coef, difficultyExam: data[i].difficultyMoyenne, difficultyTest: data[i].difficultyMoyenne}
     dataSend.push(newData)
   }
   return mainAlgo(dataSend, moyenGoal) as NotesDataEleve
