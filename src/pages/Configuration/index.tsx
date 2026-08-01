@@ -48,7 +48,7 @@ function Configuration() {
         <div className="mt-10 w-full flex items-center flex-col lg:flex-row gap-3 flex-wrap">
           {data.eleve.length ?
             data.eleve.map((element,index) => (
-              <Card secondIndex="" key={element.id} id={index} coef={element.coef} classes={element.name} qualif={studentStatut} choice={["","",element.difficultyMoyenne]}/>
+              <Card secondIndex={0} key={element.id} id={[index]} coef={element.coef} classes={element.name} qualif={studentStatut} choice={["","",element.difficultyMoyenne]}/>
             ))
             : <NullData eleve={true} />}
 

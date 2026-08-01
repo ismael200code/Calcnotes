@@ -3,7 +3,7 @@ import { DataContext } from "../../utils/context/data_context"
 import Popup from "reactjs-popup"
 
 
-function CardUnite ({name,children,coef,id,index}) {
+function CardUnite ({name,children,coef,id,index}:{name:string,children:React.ReactNode,coef:number,id:number,index:number}) {
   const [data,setData] = useContext(DataContext)
   const [isOpen,setIsoPen] = useState(false)
   const [nameClasses,setNameClasses] = useState("")

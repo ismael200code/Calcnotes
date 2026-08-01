@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { IoMdReturnLeft } from "react-icons/io";
 
 
-function Nav({name,link}) {
+function Nav({name,link}: {name:string,link:string}) {
 
     return (
       <nav className="flex items-center gap-5">

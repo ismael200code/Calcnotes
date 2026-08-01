@@ -5,7 +5,7 @@ import { useContext } from "react"
 
 
 
-function Card({ classes, coef, qualif, choice, id ,secondIndex}) {
+function Card({ classes, coef, qualif, choice, id ,secondIndex}:{classes:string,coef:number,qualif:string,choice:[string,string,string],id:number[],secondIndex:number}) {
   const [data,setData] = useContext(DataContext)
 
   function deleteDataEleve(indexRemove: number) {
@@ -38,14 +38,14 @@ function Card({ classes, coef, qualif, choice, id ,secondIndex}) {
         <div className="mt-1">
           <h3 className="font-light">Contrôle continnu:</h3>
           <div className="flex justify-center">
-            <Level secondIndex={secondIndex} choiceUser={choice[1]} index={id[0]} type={"control"}/>
+            <Level secondIndex={secondIndex} choiceUser={choice[1]} index={id} type={"control"}/>
           </div>
         </div>
 
         <div className="mt-1">
           <h3 className="font-light">Examen:</h3>
           <div className="flex justify-center">
-            <Level secondIndex={secondIndex} choiceUser={choice[0]} index={id[0]} type={"exam"}/>
+            <Level secondIndex={secondIndex} choiceUser={choice[0]} index={id} type={"exam"}/>
           </div>
         </div>
 
@@ -58,13 +58,13 @@ function Card({ classes, coef, qualif, choice, id ,secondIndex}) {
 
         <div className="border-b flex justify-between">
           <h3 className="font-semibold">{classes} (coef: {coef})</h3>
-          <button className="text-red-400 active:scale-95" onClick={()=>{deleteDataEleve(id)}}>supprimer</button>
+          <button className="text-red-400 active:scale-95" onClick={()=>{deleteDataEleve(id[0])}}>supprimer</button>
         </div>
 
         <div className="mt-1">
           <h3 className="font-light">Moyenne:</h3>
           <div className="flex justify-center">
-            <Level secondIndex="" choiceUser={choice[2]} index={id} type="moyenne"/>
+            <Level secondIndex={0} choiceUser={choice[2]} index={id} type="moyenne"/>
           </div>
         </div>
 

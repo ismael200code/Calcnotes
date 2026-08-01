@@ -1,10 +1,11 @@
+import type { NotesDataEleve } from "../../../types/data_type"
 
 
 
 
 
 
-const BullettinEleve = ({data}) => {
+const BullettinEleve = ({data}:{data:NotesDataEleve}) => {
 
   // Schema
   //       {/** Level high */}

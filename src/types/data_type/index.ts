@@ -37,11 +37,20 @@ export interface NotesDataEleve {
   code: number
   message: string
   data: {
-    low: []
-    middle: []
-    good: []
-    high: []
-  } | boolean
+    exam: {
+      low: []
+      middle: []
+      good: []
+      high: []
+    },
+    control: {
+      low: []
+      middle: []
+      good: []
+      high: []
+    }
+
+  }
   moyenne: number
 }
 export interface NotesDataEtudiant {

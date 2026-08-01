@@ -4,13 +4,14 @@ import takeNotes from "../../../utils/Take_Notes"
 import calculMoyenMatiere from "../../../utils/Calcul_Moyen_Matiere"
 import calculMoyenUnite from "../../../utils/Calcul_Moyen_Unite"
 import tronquerNombre from "../../../utils/Trunc"
+import type { NotesDataEtudiant } from "../../../types/data_type"
 
 
 
 
 
 
-const BullettinEtudiant = ({data: dataAlgo}) => {
+const BullettinEtudiant = ({data: dataAlgo}:{data: NotesDataEtudiant}) => {
 
   const [data] = useContext(DataContext)
   const notes = takeNotes(dataAlgo)

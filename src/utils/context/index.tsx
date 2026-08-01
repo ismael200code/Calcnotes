@@ -3,7 +3,7 @@ import { DataContext } from "./data_context";
 import { useState } from "react";
 
 
-function DataProvider({children}) {
+function DataProvider({children}:{children:React.ReactNode}) {
   
   const [data,setData] = useState<DataTypeState>({
     etudiant: [],

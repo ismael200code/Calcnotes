@@ -4,20 +4,20 @@ import { DataContext } from "../../utils/context/data_context"
 
 
 
-function Level({choiceUser,index,type,secondIndex}) {
+function Level({choiceUser,index,type,secondIndex}:{choiceUser:string,index:number[],type:string,secondIndex:number}) {
   const [choice,setChoice] = useState(choiceUser)
   const [data,setData] = useContext(DataContext)
 
   function savedData(etat: 'low' | 'middle' | 'good' | 'high',) {
     const newData = {...data}
     if (type==="moyenne") {
-      newData.eleve[index].difficultyMoyenne = etat
+      newData.eleve[index[0]].difficultyMoyenne = etat
     }
     else if (type==="exam") {
-      newData.etudiant[index].data[secondIndex].difficultyExam = etat
+      newData.etudiant[index[0]].data[secondIndex].difficultyExam = etat
     }
     else if (type==="control") {
-      newData.etudiant[index].data[secondIndex].difficultyTest = etat
+      newData.etudiant[index[0]].data[secondIndex].difficultyTest = etat
     }
       setData(newData)
   }
