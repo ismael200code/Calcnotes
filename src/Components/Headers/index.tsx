@@ -1,4 +1,4 @@
-import Logo from "../../assets/logo.png"
+import Logo from "../../../public/logo.png"
 
 
 function Headers () {
