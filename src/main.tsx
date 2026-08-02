@@ -12,7 +12,7 @@ import DataProvider from './utils/context'
 import { AnalyticsTracker } from './utils/AnaliticsTracker/intex'
 
 ReactGA.initialize(import.meta.env.VITE_GA_ID)
-
+//
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <DataProvider>
